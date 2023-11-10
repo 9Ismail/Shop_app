@@ -22,11 +22,13 @@ class ProductItem extends StatelessWidget {
               arguments: product.id,
             );
           },
-          // child: FadeInImage(placeholder: AssetImage('assets/images/product-placeholder.jpeg'), image: NetworkImage(product.imageUrl),fit: BoxFit.cover,),
-          child: Image.network(
-            product.imageUrl,
-            fit: BoxFit.cover,
-          ),
+           child: Hero(
+            tag:product.id,
+            child: FadeInImage(placeholder: AssetImage('assets/images/product-placeholder.jpeg'), image: NetworkImage(product.imageUrl),fit: BoxFit.cover,)),
+          // child: Image.network(
+          //   product.imageUrl,
+          //   fit: BoxFit.cover,
+          // ),
         ),
         footer: GridTileBar(
           leading: Consumer<Product>(
