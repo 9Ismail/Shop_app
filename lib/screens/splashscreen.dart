@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'products_overview_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -21,9 +22,25 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Image.network(
-          'https://media.tenor.com/IL19yJpm-dcAAAAi/shop-shopping.gif'),
+    return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        systemOverlayStyle: SystemUiOverlayStyle(
+            statusBarColor: Colors.black,
+            systemNavigationBarIconBrightness: Brightness.dark),
+        backgroundColor: Colors.black,
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            child: Image.network(
+                'https://cdn.dribbble.com/users/146773/screenshots/4228811/dribble_cart.gif'),
+          ),
+          SizedBox(height: 90),
+          CircularProgressIndicator(color: Colors.white)
+        ],
+      ),
     );
   }
 }
