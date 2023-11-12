@@ -37,7 +37,7 @@ class _OrderItemState extends State<OrderItem> {
                 icon: Icon(_expanded ? Icons.expand_less : Icons.expand_more),
               ),
             ),
-            // if (_expanded)  //this condition is applicable if we are not Animated container
+            // if (_expanded)  //this condition is applicable if we are not using Animated container
               AnimatedContainer(
                 duration: Duration(milliseconds: 300),
                 padding: EdgeInsets.symmetric(horizontal: 15, vertical: 4),
